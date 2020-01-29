@@ -1,9 +1,11 @@
 import React from 'react';
-import './App.css';
+import Clients from './components/Clients/Clients';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
+      <Clients/>
     </div>
   );
 }

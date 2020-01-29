@@ -1,12 +1,12 @@
 ## Zadanie
 
-1.  Sklonuj repozytorium z linku 
+<!-- 1.  Sklonuj repozytorium z linku  -->
 
-2.  Pobierz dane dostarczone w pliku clients.json do twojej aplikacji
+<!-- 2.  Pobierz dane dostarczone w pliku clients.json do twojej aplikacji -->
     
-3.  Wyświetl je w formie listy bądź kafelków zawierających wszystkie informacje o kliencie
+<!-- 3.  Wyświetl je w formie listy bądź kafelków zawierających wszystkie informacje o kliencie -->
     
-4.  Dodaj pola wyszukiwania filtrujące klientów po imieniu i nazwisku
+<!-- 4.  Dodaj pola wyszukiwania filtrujące klientów po imieniu i nazwisku -->
     
 5.  Dodaj opcje sortowania klientów : alfabetycznie[A-Z, Z-A] po polu email 
 

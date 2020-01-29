@@ -1,0 +1,82 @@
+$purple:#8E77E1;
+.clients{
+    padding: 50px 0;
+    max-width: 960px;
+    margin: auto;
+    .clients__body{
+        display: flex;
+        flex-wrap: wrap;
+        .client{
+            box-sizing: border-box;
+            text-align: center;
+            margin: 15px;
+            width: 280px;
+            padding: 20px;
+            box-shadow: 0 2px 8px #eee;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            .client__avatar{
+                overflow: hidden;
+                box-shadow: 0 2px 12px #eee;
+                margin: 0 auto 15px;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                &.client--male{
+                    background-color: rgba(180, 215, 243, 0.35);
+                    box-shadow: 0 0 35px rgba(180, 215, 243, 0.85);
+                }
+                &.client--female{
+                    background-color: rgba(255, 198, 199, 0.411);
+                    box-shadow: 0 0 35px rgb(255, 198, 199);
+                }
+                img{
+                    max-height: 90%;
+                }
+            }
+            .client__info{
+                .client__name{
+                    font-weight: 700;   
+                    font-size: 18px;
+                }
+                .client__mail{
+                    font-size: 14px;
+                    color: #bbb;
+                    transition: 300ms;
+                    &:hover{
+                        color: $purple;
+                    }
+                }
+                .client__details{
+                    margin-top: 15px;
+                    list-style: none;
+                    width: 100%;
+                    li{
+                        color: #666;
+                        padding: 5px 0;
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 14px;
+                        &:not(:last-child){
+                            border-bottom: 1px solid #eee;
+                        }
+                    }
+                }
+            }
+        }
+        .client-not-found{
+            padding: 100px 0;
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
+            span{
+                font-size: 1.2em;
+                font-weight: 700;
+                color: $purple;
+            }
+        }
+    }
+}
