@@ -1,16 +1,31 @@
 import React from 'react';
 
-const Sort=()=>{
+const Sort=({sortValue:{value}, setSortValue})=>{
+    const changeHandler=(name)=>{
+        if(name === value){
+            setSortValue((prevValue)=>{
+                const {value} = prevValue,
+                direction = !prevValue.direction;
+                return {value, direction}
+            })
+        }
+        else{
+            setSortValue({value:name, direction:false});
+        }
+    }
     return(
         <div className="sort">
             <p>Sort by:</p>
             <div className="sort__inner">
-                <div className="sort__item">
+                <button className="sort__item" onClick={()=>{changeHandler('')}}>
+                    None
+                </button>
+                <button className="sort__item" onClick={()=>{changeHandler('name')}}>
                     Name
-                </div>
-                <div className="sort__item">
-                    Price
-                </div>
+                </button>
+                <button className="sort__item" onClick={()=>{changeHandler('age')}}>
+                    Age
+                </button>
             </div>
         </div>
     )

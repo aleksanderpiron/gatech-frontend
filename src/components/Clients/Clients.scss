@@ -3,6 +3,10 @@ $purple:#8E77E1;
     padding: 50px 0;
     max-width: 960px;
     margin: auto;
+    .clients__header{
+        display: flex;
+        justify-content: space-between;
+    }
     .clients__body{
         display: flex;
         flex-wrap: wrap;
