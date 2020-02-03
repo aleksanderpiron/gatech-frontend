@@ -12,7 +12,6 @@ const Client=()=>{
     [sortValue, setSortValue] = useState({value:'default', direction:true}),
 
     //Functionalities
-
     filterByName=useCallback(()=>{
         let updatedClients = [...ClientsJson.data];
         if(searchValue !== ''){
