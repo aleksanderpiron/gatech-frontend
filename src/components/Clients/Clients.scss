@@ -1,11 +1,13 @@
 $purple:#8E77E1;
 .clients{
-    padding: 50px 0;
-    max-width: 960px;
+    padding: 50px 0 0;
+    max-width: 930px;
     margin: auto;
     .clients__header{
         display: flex;
         justify-content: space-between;
+        margin-bottom: 10px;
+        padding: 0 10px;
     }
     .clients__body{
         display: flex;
@@ -80,6 +82,47 @@ $purple:#8E77E1;
                 font-size: 1.2em;
                 font-weight: 700;
                 color: $purple;
+            }
+        }
+    }
+    .clients__footer{
+        overflow: hidden;
+        padding: 50px 0 30px;
+        position: relative;
+        p{
+            font-size: 14px;
+            text-align: center;
+            a{
+                font-size: 18px;
+                display: block;
+                color: $purple;
+                text-decoration: none;
+            }
+        }
+    }
+}
+@media (max-width:929px){
+    .clients{
+        .clients__body{
+            justify-content: center;
+        }
+    }
+}
+@media (max-width:500px){
+    .clients{
+        .clients__header{
+            flex-direction: column;
+            align-items: center;
+            label{
+                margin-bottom: 15px;
+            }
+            .sort{
+                flex-direction: column;
+                align-items: center;
+                p{
+                    margin-right: 0;
+                    margin-bottom: 15px;
+                }
             }
         }
     }

@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import './Sort.scss';
 
-const Sort=({sortValue:{value}, setSortValue})=>{
+const Sort=({sortValue:{value, direction}, setSortValue})=>{
     const changeHandler=(name)=>{
         if(name === value){
             setSortValue((prevValue)=>{
@@ -10,22 +11,40 @@ const Sort=({sortValue:{value}, setSortValue})=>{
             })
         }
         else{
-            setSortValue({value:name, direction:false});
+            setSortValue({value:name, direction:true});
         }
+    },
+    activeRef = useRef(null),
+    options = ['default', 'email', 'age'],
+    content = options.map(opt=>{
+        return <button
+        key={`sort_${opt}`}
+        ref={opt===value?activeRef:null}
+        className={opt===value?"sort__item sort__item--active":"sort__item"}
+        onClick={()=>{changeHandler(opt)}}>
+            {opt}
+        </button>
+    });
+    let bgStyles,
+    sortBgClasses = "sort__bg ";
+    if(activeRef.current !== null){
+        bgStyles ={
+            width:`${activeRef.current.offsetWidth}px`,
+            left:`${activeRef.current.offsetLeft}px`,
+        }
+    }
+    if(value === 'default'){
+        sortBgClasses += 'sort__bg--default '
+    }
+    if(!direction){
+        sortBgClasses += 'sort__bg--descending '
     }
     return(
         <div className="sort">
             <p>Sort by:</p>
             <div className="sort__inner">
-                <button className="sort__item" onClick={()=>{changeHandler('')}}>
-                    None
-                </button>
-                <button className="sort__item" onClick={()=>{changeHandler('name')}}>
-                    Name
-                </button>
-                <button className="sort__item" onClick={()=>{changeHandler('age')}}>
-                    Age
-                </button>
+                {content}
+                <div className={sortBgClasses} style={bgStyles}></div>
             </div>
         </div>
     )

@@ -8,9 +8,9 @@
     
 <!-- 4.  Dodaj pola wyszukiwania filtrujące klientów po imieniu i nazwisku -->
     
-5.  Dodaj opcje sortowania klientów : alfabetycznie[A-Z, Z-A] po polu email 
+<!-- 5.  Dodaj opcje sortowania klientów : alfabetycznie[A-Z, Z-A] po polu email  -->
 
-6. (*)  Dodaj opcje sortowania klientów rosnąco/malejąco po polu age
+<!-- 6. (*)  Dodaj opcje sortowania klientów rosnąco/malejąco po polu age -->
 
 7. (*)  Wyróżnij graficznie płcie klientów.
 

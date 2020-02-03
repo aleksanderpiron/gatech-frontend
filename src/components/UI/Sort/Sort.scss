@@ -1,0 +1,63 @@
+.sort{
+    display: flex;
+    align-items: flex-end;
+    p{
+        font-size: 12px;
+        color: #ccc;
+        margin-right: 5px;
+    }
+    .sort__inner{
+        position: relative;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        .sort__item{
+            text-transform: capitalize;
+            position: relative;
+            z-index: 2;
+            background-color: transparent;
+            border: none;
+            padding: 7px 10px;
+            cursor: pointer;
+            transition: 400ms;
+            &.sort__item--active{
+                color: #fff;
+            }
+            &:not(:nth-child(3)){
+                border-right: 1px solid #ccc;
+            }
+        }
+        .sort__bg{
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            height: 100%;
+            background-color: #8E77E1;
+            transition: 300ms;
+            &.sort__bg--default::after{
+                top: 0;
+                opacity: 0;
+            }
+            &.sort__bg--descending::after{
+                top: 30px;
+                transform: rotate(90deg);
+            }
+            &::after{
+                content: '';
+                background-image: url('../../../assets/arrow.svg');
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                transform: rotate(-90deg);
+                position: absolute;
+                top: -15px;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 13px;
+                height: 15px;
+                transition: 300ms;
+            }
+        }
+    }
+}

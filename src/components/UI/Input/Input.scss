@@ -1,0 +1,58 @@
+label{
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    input{
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 7px 10px;
+        box-sizing: content-box;
+        &.search-input{
+            width: 200px;
+            padding-right: 35px;
+            background-image: url('../../../assets/search.svg');
+            background-repeat: no-repeat;
+            background-position: center right 10px;
+            background-size: 15px;
+            transition: 300ms;
+            &.filled{
+                background-position: center right -30px;
+                ~ .clear{
+                    right: 10px;
+                }
+            }
+        }
+        &:focus{
+            &.search-input{
+                background-position: center right -30px;
+                ~ .clear{
+                    right: 10px;
+                }
+            }
+            ~ .line{
+                width: 100%;
+            }
+        }
+    }
+    .line{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background-color: #8E77E1;
+        width: 0%;
+        transition: 300ms;
+    }
+    .clear{
+        width: 13px;
+        height: 13px;
+        background-image: url('../../../assets/close.svg');
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        right: -30px;
+        margin: auto;
+        cursor: pointer;
+        transition: 300ms;
+    }
+}

@@ -9,66 +9,75 @@ const Client=()=>{
     //State
     const [clientsArray, setClientsArray] = useState([]),
     [searchValue, setSearchValue] = useState(''),
-    [sortValue, setSortValue] = useState({value:'', direction:false}),
+    [sortValue, setSortValue] = useState({value:'default', direction:true}),
 
     //Functionalities
+
     filterByName=useCallback(()=>{
-        console.log('filtr');
-        let updatedClients = ClientsJson.data;
+        let updatedClients = [...ClientsJson.data];
         if(searchValue !== ''){
             updatedClients = updatedClients.filter(({name})=>{
                 return name.toLowerCase().includes(searchValue.toLowerCase());
             });
         };
-        setClientsArray(updatedClients);
+        return updatedClients;
     }, [searchValue]),
 
-    sortClients=useCallback(()=>{
-        console.log('sort');
-        let updatedClients;
+    sortBy=useCallback((arrayToSort)=>{
+        let updatedClients = [...arrayToSort];
         const {value, direction} = sortValue;
         switch(value){
-            case 'name':
+            case 'email':
                 if(direction){
-                    updatedClients = clientsArray.sort((a, b)=>{
-                        if(a.name.toLowerCase() < b.name.toLowerCase()) { return -1; }
-                        if(a.name.toLowerCase() > b.name.toLowerCase()) { return 1; }
+                    updatedClients = updatedClients.sort((a, b)=>{
+                        if(a.email.toLowerCase() < b.email.toLowerCase()) { return -1; }
+                        if(a.email.toLowerCase() > b.email.toLowerCase()) { return 1; }
                         return 0;
                     })
                 }
                 else if(!direction){
-                    updatedClients = clientsArray.sort((a, b)=>{
-                        if(a.name.toLowerCase() < b.name.toLowerCase()) { return 1; }
-                        if(a.name.toLowerCase() > b.name.toLowerCase()) { return -1; }
+                    updatedClients = updatedClients.sort((a, b)=>{
+                        if(a.email.toLowerCase() < b.email.toLowerCase()) { return 1; }
+                        if(a.email.toLowerCase() > b.email.toLowerCase()) { return -1; }
                         return 0;
-                    })
+                    });
                 }
             break;
             case 'age':
-                updatedClients = ClientsJson.data
+                if(direction){
+                    updatedClients = updatedClients.sort((a, b)=>{
+                        if(parseInt(a.age) < parseInt(b.age)) { return -1; }
+                        if(parseInt(a.age) > parseInt(b.age)) { return 1; }
+                        return 0;
+                    });
+                }
+                else if(!direction){
+                    updatedClients = updatedClients.sort((a, b)=>{
+                        if(parseInt(a.age) < parseInt(b.age)) { return 1; }
+                        if(parseInt(a.age) > parseInt(b.age)) { return -1; }
+                        return 0;
+                    });
+                }
             break;
             default:
-                updatedClients = ClientsJson.data;
+                updatedClients = filterByName();
             break;
         };
-        setClientsArray(updatedClients);
-    }, [sortValue, clientsArray]);
+        return updatedClients;
+    }, [sortValue, filterByName]);
 
     //Effects
     useEffect(()=>{
-        console.log('effect1')
         setClientsArray(ClientsJson.data);
     }, []);
-
+    
+        //Filter & sort effect
     useEffect(()=>{
-        console.log('effect2')
-        filterByName();
-    }, [searchValue, filterByName]);
+        let updatedArray = filterByName();
+        updatedArray = sortBy(updatedArray);
+        setClientsArray(updatedArray);
+    }, [searchValue, filterByName, sortValue, sortBy]);
 
-    useEffect(()=>{
-        console.log('effect3')
-        sortClients();
-    }, [sortValue, sortClients]);
     // Render client items
     let clientBodyContent = <p>Loading...</p>;
     if(clientsArray.length>0){
@@ -83,8 +92,9 @@ const Client=()=>{
         <div className="clients">
             <div className="clients__header">
                 <Input 
+                className='search-input'
                 value={searchValue}
-                change={(e)=>setSearchValue(e.target.value)}/>
+                change={setSearchValue}/>
                 <Sort 
                 sortValue={sortValue}
                 setSortValue={setSortValue}/>
@@ -93,7 +103,7 @@ const Client=()=>{
                 {clientBodyContent}
             </div>
             <div className="clients__footer">
-
+                <p>Made by <a href="mailto:pironaleksander@gmail.com">Aleksander Piron</a></p>
             </div>
         </div>
     );
