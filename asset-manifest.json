@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.08d9ca1a.chunk.css",
-    "main.js": "/static/js/main.00771001.chunk.js",
-    "main.js.map": "/static/js/main.00771001.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.bb80eec7.js",
-    "runtime-main.js.map": "/static/js/runtime-main.bb80eec7.js.map",
-    "static/js/2.84453ae5.chunk.js": "/static/js/2.84453ae5.chunk.js",
-    "static/js/2.84453ae5.chunk.js.map": "/static/js/2.84453ae5.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.abab5a56493f9c37dbb179236ce08883.js": "/precache-manifest.abab5a56493f9c37dbb179236ce08883.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.08d9ca1a.chunk.css.map": "/static/css/main.08d9ca1a.chunk.css.map",
-    "static/js/2.84453ae5.chunk.js.LICENSE": "/static/js/2.84453ae5.chunk.js.LICENSE",
-    "static/media/Sort.scss": "/static/media/arrow.9b2528e2.svg",
-    "static/media/Input.scss": "/static/media/search.15c63169.svg"
+    "main.css": "/gatech-frontend/static/css/main.89114d99.chunk.css",
+    "main.js": "/gatech-frontend/static/js/main.bb19d4eb.chunk.js",
+    "main.js.map": "/gatech-frontend/static/js/main.bb19d4eb.chunk.js.map",
+    "runtime-main.js": "/gatech-frontend/static/js/runtime-main.2f5eeedd.js",
+    "runtime-main.js.map": "/gatech-frontend/static/js/runtime-main.2f5eeedd.js.map",
+    "static/js/2.84453ae5.chunk.js": "/gatech-frontend/static/js/2.84453ae5.chunk.js",
+    "static/js/2.84453ae5.chunk.js.map": "/gatech-frontend/static/js/2.84453ae5.chunk.js.map",
+    "index.html": "/gatech-frontend/index.html",
+    "precache-manifest.8457629b4de3cd45714e778e2f5c4030.js": "/gatech-frontend/precache-manifest.8457629b4de3cd45714e778e2f5c4030.js",
+    "service-worker.js": "/gatech-frontend/service-worker.js",
+    "static/css/main.89114d99.chunk.css.map": "/gatech-frontend/static/css/main.89114d99.chunk.css.map",
+    "static/js/2.84453ae5.chunk.js.LICENSE": "/gatech-frontend/static/js/2.84453ae5.chunk.js.LICENSE",
+    "static/media/Sort.scss": "/gatech-frontend/static/media/arrow.9b2528e2.svg",
+    "static/media/Input.scss": "/gatech-frontend/static/media/search.15c63169.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.bb80eec7.js",
+    "static/js/runtime-main.2f5eeedd.js",
     "static/js/2.84453ae5.chunk.js",
-    "static/css/main.08d9ca1a.chunk.css",
-    "static/js/main.00771001.chunk.js"
+    "static/css/main.89114d99.chunk.css",
+    "static/js/main.bb19d4eb.chunk.js"
   ]
 }
